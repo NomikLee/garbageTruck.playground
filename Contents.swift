@@ -45,13 +45,13 @@ truck1Point.coordinate = CLLocationCoordinate2D(latitude: truckCoordinate1.truck
 MapView.addAnnotation(people1Point)
 MapView.addAnnotation(truck1Point)
 
-//設定Playground頁面的liveView為剛剛建立的地圖視圖，這樣地圖將在Playground的右側顯示出來
 PlaygroundPage.current.liveView = MapView
 
 // 設定AVSpeechUtterance來準備音頻通知內容
 let TodayNow = Date()
 let TodayDateFormatter = DateFormatter()
 TodayDateFormatter.dateFormat = "西元yyyy年MM月dd日 HH點mm分"
+
 let TodayDateString = TodayDateFormatter.string(from: TodayNow)
 let soundNotify =  AVSpeechUtterance(string: "現在時間\(TodayDateString)垃圾車距離您大約\(conversionInput)公尺")
 let NotifySynthesizer = AVSpeechSynthesizer()
@@ -59,10 +59,10 @@ soundNotify.voice = AVSpeechSynthesisVoice(language: "zh-TW") // 設定通知語
 soundNotify.pitchMultiplier = 0.9 // 設定通知語音的音調
 soundNotify.rate = 0.6 // 設定通知語音的速率
 
-// 播放音頻通知
+// 系統語音講話
 NotifySynthesizer.speak(soundNotify)
 
-// 播放垃圾車駛來的音頻
+// 播放垃圾車駛來的音樂
 let url = URL(string: "https://drive.google.com/uc?export=download&id=1PklN84VvWzTMH80hzk1Ny2X9aXCUJoTr")
 let player = AVPlayer(url: url!)
 player.play()
