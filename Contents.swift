@@ -1,4 +1,3 @@
-// 引入必要的框架
 import UIKit
 import MapKit
 import AVFAudio
@@ -35,11 +34,13 @@ let truck1Point = MKPointAnnotation()
 // 設定地圖的顯示區域為人員位置周圍的一個正方形範圍
 MapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: peopleCoordinate1.peopleLatitude, longitude: peopleCoordinate1.peopleLongitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
 
+
 // 設定人員和垃圾車的標題和座標
 people1Point.title = "等丟垃圾人員1"
 people1Point.coordinate = CLLocationCoordinate2D(latitude: peopleCoordinate1.peopleLatitude, longitude: peopleCoordinate1.peopleLongitude)
 truck1Point.title = "垃圾車1"
 truck1Point.coordinate = CLLocationCoordinate2D(latitude: truckCoordinate1.truckLatitude, longitude: truckCoordinate1.truckLongitude)
+
 
 // 將標記加入地圖
 MapView.addAnnotation(people1Point)
