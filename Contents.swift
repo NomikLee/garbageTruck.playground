@@ -48,10 +48,10 @@ MapView.addAnnotation(truck1Point)
 
 PlaygroundPage.current.liveView = MapView
 
-// 設定AVSpeechUtterance來準備音頻通知內容
+// 設定AVSpeechUtterance播放通知內容
 let TodayNow = Date()
 let TodayDateFormatter = DateFormatter()
-TodayDateFormatter.dateFormat = "西元yyyy年MM月dd日 HH點mm分"
+TodayDateFormatter.dateFormat = "今日為 MM月dd日 HH點mm分ss秒"
 
 let TodayDateString = TodayDateFormatter.string(from: TodayNow)
 let soundNotify =  AVSpeechUtterance(string: "現在時間\(TodayDateString)垃圾車距離您大約\(conversionInput)公尺")
